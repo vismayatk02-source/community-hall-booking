@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f7f5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            background: white;
+            padding: 35px;
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #34334a;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background: #6c63a8;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #514987;
+        }
+
+        #error {
+            color: red;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h1>Admin Login</h1>
+
+        <p>Community Hall Booking Management</p>
+
+        <form id="loginForm">
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter Admin Username"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter Admin Password"
+                required
+            >
+
+            <button type="submit">Login</button>
+
+            <p id="error"></p>
+
+        </form>
+
+    </div>
+
+    <script>
+        const adminUsername = "admin";
+        const adminPassword = "Hall@123";
+
+        document.getElementById("loginForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const username =
+                document.getElementById("username").value;
+
+            const password =
+                document.getElementById("password").value;
+
+            if (
+                username === adminUsername &&
+                password === adminPassword
+            ) {
+
+                sessionStorage.setItem(
+                    "adminAuthenticated", "true"
+                );
+
+                window.location.href = "admin.html";
+
+            } else {
+
+                document.getElementById("error").textContent =
+                    "Invalid username or password!";
+
+            }
+
+        });
+    </script>
+
+</body>
+</html>

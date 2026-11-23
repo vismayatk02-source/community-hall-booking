@@ -1,0 +1,566 @@
+/* BASIC SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f7f5ff;
+    color: #34334a;
+}
+
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: linear-gradient(110deg, #6655b8, #3989c9);
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffe0e8;
+}
+
+/* HOME HERO */
+.hero {
+    min-height: 450px;
+    background: linear-gradient(120deg, #7665c9, #56a8d9, #e99ab6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #6655b8;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ffe2e8;
+    transform: translateY(-2px);
+}
+
+/* ABOUT */
+.about {
+    padding: 65px 10%;
+    text-align: center;
+    background: #ffffff;
+}
+
+.about h2,
+.halls h2,
+.booking h2,
+.contact h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #6655b8;
+}
+
+.about p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* HALLS */
+.halls {
+    padding: 60px 8%;
+    text-align: center;
+    background: #eeeaff;
+}
+
+.hall-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.hall-card {
+    background: white;
+    width: 280px;
+    padding: 35px 20px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(102, 85, 184, 0.12);
+    border-bottom: 5px solid #b8a9ef;
+    transition: 0.3s;
+}
+
+.hall-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 22px rgba(102, 85, 184, 0.2);
+}
+
+.hall-card h3 {
+    color: #6655b8;
+    margin-bottom: 15px;
+}
+
+.hall-card p {
+    line-height: 1.6;
+}
+
+/* BOOKING SECTION */
+.booking {
+    text-align: center;
+    padding: 65px 20px;
+    background: #ffffff;
+}
+
+.booking p {
+    margin-bottom: 25px;
+}
+
+.booking .btn {
+    background: #6655b8;
+    color: white;
+}
+
+.booking .btn:hover {
+    background: #e68ba9;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    background: #e4f3ff;
+    padding: 50px 20px;
+}
+
+.contact p {
+    margin: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: #51458f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 1.8;
+}
+
+/* BOOKING PAGE */
+.booking-page {
+    background: linear-gradient(135deg, #e8e2ff, #e1f3ff, #ffe8ed);
+    padding: 50px 15px;
+    min-height: 100vh;
+}
+
+.form-container {
+    background: white;
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(102, 85, 184, 0.15);
+    border-top: 6px solid #8b79d5;
+}
+
+.form-container h1 {
+    text-align: center;
+    color: #6655b8;
+    margin-bottom: 12px;
+}
+
+.form-description {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+#bookingForm label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #51458f;
+}
+
+#bookingForm input,
+#bookingForm select,
+#bookingForm textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d8d2ee;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #fbfaff;
+    color: #34334a;
+}
+
+#bookingForm input:focus,
+#bookingForm select:focus,
+#bookingForm textarea:focus {
+    outline: none;
+    border-color: #8875d2;
+    box-shadow: 0 0 0 3px rgba(136, 117, 210, 0.12);
+}
+
+.time-row {
+    display: flex;
+    gap: 15px;
+}
+
+.time-row div {
+    flex: 1;
+}
+
+/* ALL BOOKING BUTTONS */
+.submit-btn,
+#checkAvailabilityBtn,
+#checkStatusBtn,
+#printReceiptBtn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(100deg, #7160c2, #479bd0);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover,
+#checkAvailabilityBtn:hover,
+#checkStatusBtn:hover,
+#printReceiptBtn:hover {
+    background: linear-gradient(100deg, #e58ba8, #c86ca3);
+    transform: translateY(-2px);
+}
+
+#formMessage,
+#availabilityMessage,
+#statusMessage {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.back-link {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+    color: #6655b8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* CUSTOMER STATUS CHECKER */
+.status-checker {
+    background: #f3efff;
+    padding: 25px;
+    margin-top: 35px;
+    border-radius: 15px;
+    border: 1px solid #ded5ff;
+}
+
+.status-checker h2 {
+    color: #6655b8;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.status-checker p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.status-checker label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #51458f;
+}
+
+.status-checker input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d8d2ee;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+/* ADMIN DASHBOARD */
+.booking-summary {
+    background: linear-gradient(120deg, #e9e4ff, #e0f2ff);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    border-left: 5px solid #8875d2;
+}
+
+.booking-summary h2 {
+    color: #51458f;
+}
+
+.booking-summary p {
+    font-size: 16px;
+    margin: 12px 0;
+}
+
+.booking-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.booking-controls input,
+.booking-controls select {
+    padding: 12px;
+    border: 1px solid #d8d2ee;
+    border-radius: 10px;
+    font-size: 15px;
+    flex: 1;
+    min-width: 180px;
+}
+
+#bookingList > div {
+    background: white;
+    padding: 20px;
+    margin-bottom: 18px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(102, 85, 184, 0.10);
+    border-left: 5px solid #a99ae6;
+}
+
+#bookingList button {
+    padding: 10px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #6655b8;
+    color: white;
+    font-weight: bold;
+}
+
+#bookingList button:hover {
+    opacity: 0.85;
+}
+
+/* MOBILE DESIGN */
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .time-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .booking-controls {
+        flex-direction: column;
+    }
+
+    .booking-controls input,
+    .booking-controls select {
+        width: 100%;
+    }
+}
+/* ===== BOOKMYHALL - 15 HALLS DESIGN ===== */
+
+.halls {
+    padding: 65px 6%;
+    background: #eeeaff;
+    text-align: center;
+}
+
+.hall-intro {
+    margin: 15px auto 30px;
+    line-height: 1.7;
+    max-width: 700px;
+}
+
+.hall-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 35px;
+    align-items: stretch;
+}
+
+.hall-card {
+    background: white;
+    width: 100%;
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(102, 85, 184, 0.12);
+    border-bottom: 5px solid #b8a9ef;
+    transition: 0.3s;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.hall-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(102, 85, 184, 0.2);
+}
+
+.hall-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.hall-card h3 {
+    color: #6655b8;
+    font-size: 19px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.hall-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 9px;
+}
+
+.hall-card p strong {
+    color: #51458f;
+}
+
+.hall-book-btn {
+    display: block;
+    margin-top: auto;
+    padding: 12px;
+    background: linear-gradient(100deg, #7160c2, #479bd0);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hall-book-btn:hover {
+    background: linear-gradient(100deg, #e58ba8, #c86ca3);
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .hall-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hall-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hall-card img {
+        height: 220px;
+    }
+
+    .halls {
+        padding: 45px 5%;
+    }
+}
+/* Beautiful Community Hall Search Bar */
+
+.hall-search {
+    width: 100%;
+    max-width: 550px;
+    margin: 25px auto 30px;
+    padding: 0 15px;
+}
+
+.hall-search input {
+    width: 100%;
+    padding: 17px 22px;
+    font-size: 17px;
+    color: #34334a;
+    background-color: #ffffff;
+    border: 2px solid #7770c9;
+    border-radius: 30px;
+    outline: none;
+    box-shadow: 0 5px 15px rgba(80, 70, 150, 0.15);
+    transition: 0.3s ease;
+}
+
+.hall-search input::placeholder {
+    color: #88839f;
+    font-size: 15px;
+}
+
+.hall-search input:focus {
+    border-color: #493ca8;
+    box-shadow: 0 5px 20px rgba(80, 70, 150, 0.3);
+    transform: scale(1.02);
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="booking-page">
+        <div class="form-container">
+
+            <h1>Admin Dashboard</h1>
+            <p>Community Hall Booking Management</p>
+            <button id="logoutButton">Logout</button>
+
+            <h2>Booking Requests</h2>
+            <button id="downloadBookings">
+    Download Bookings Backup
+</button>
+            <div class="booking-summary">
+
+    <h2>Booking Summary</h2>
+    <div class="booking-controls">
+
+    <input
+        type="text"
+        id="searchBooking"
+        placeholder="Search by customer name or phone"
+    >
+
+    <select id="filterStatus">
+        <option value="All">All Bookings</option>
+        <option value="Pending">Pending</option>
+        <option value="Approved">Approved</option>
+        <option value="Rejected">Rejected</option>
+    </select>
+
+</div>
+
+    <p>Total Bookings: <span id="totalBookings">0</span></p>
+
+    <p>Pending: <span id="pendingBookings">0</span></p>
+
+    <p>Approved: <span id="approvedBookings">0</span></p>
+
+    <p>Rejected: <span id="rejectedBookings">0</span></p>
+
+</div>
+
+        <div id="bookingList">
+                <p>No bookings available yet.</p>
+            </div>
+
+        </div>
+    </div>
+    <script>
+    if (sessionStorage.getItem("adminAuthenticated") !== "true") {
+        window.location.replace("admin-login.html");
+    }
+</script>
+
+<script src="admin.js"></script>
+</body>
+</html>
+    

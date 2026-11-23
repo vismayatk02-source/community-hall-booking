@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Hall Booking Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">Community Hall</h2>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#halls">Our Halls</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="booking-page">
+        <div class="form-container">
+
+            <h1>Community Hall Booking</h1>
+            <p class="form-description">
+                Fill in the details below to request a hall booking.
+            </p>
+
+            <form id="bookingForm">
+
+                <label for="name">Customer Name</label>
+                <input type="text" id="name"
+                    placeholder="Enter your full name" required>
+
+                <label for="phone">Mobile Number</label>
+                <input type="tel" id="phone"
+                    placeholder="Enter 10-digit mobile number"
+                    pattern="[0-9]{10}" maxlength="10" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email"
+                    placeholder="Enter your email" required>
+
+                <label for="hall">Select Community Hall</label>
+                <select id="hall" required>
+                    <option value="">Choose a hall</option>
+                    <option value="Sri Lakshmi Marriage Hall">Sri Lakshmi Marriage Hall</option>
+                    <option value="Royal Grand Convention Hall">Royal Grand Convention Hall</option>
+                    <option value="Annapurna Community Hall">Annapurna Community Hall</option>
+                    <option value="Green Garden Function Hall">Green Garden Function Hall</option>
+                    <option value="Sai Ram Celebration Hall">Sai Ram Celebration Hall</option>
+                    <option value="Mahalakshmi Convention Centre">Mahalakshmi Convention Centre</option>
+                    <option value="Sunshine Banquet Hall">Sunshine Banquet Hall</option>
+                    <option value="Golden Palace Function Hall">Golden Palace Function Hall</option>
+                    <option value="Sri Venkateshwara Hall">Sri Venkateshwara Hall</option>
+                    <option value="Royal Orchid Party Hall">Royal Orchid Party Hall</option>
+                    <option value="Shubham Wedding Hall">Shubham Wedding Hall</option>
+                    <option value="Pearl Grand Community Hall">Pearl Grand Community Hall</option>
+                    <option value="Ashoka Conference Hall">Ashoka Conference Hall</option>
+                    <option value="Krishna Mini Function Hall">Krishna Mini Function Hall</option>
+                    <option value="Diamond Celebration Centre">Diamond Celebration Centre</option>
+                </select>
+
+                <!-- Hall Address -->
+                <div id="hallAddressBox"
+                    style="display:none; background:#eeeaff; padding:12px; margin-top:10px; margin-bottom:15px; border-radius:10px;">
+
+                    <strong>📍 Hall Address:</strong>
+                    <p id="hallAddress" style="margin-top:8px;"></p>
+
+                </div>
+
+                <label for="event">Event Type</label>
+                <select id="event" required>
+                    <option value="">Select event type</option>
+                    <option value="Wedding">Wedding</option>
+                    <option value="Birthday">Birthday Party</option>
+                    <option value="Meeting">Meeting</option>
+                    <option value="Seminar">Seminar</option>
+                    <option value="Cultural Event">Cultural Event</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="date">Booking Date</label>
+                <input type="date" id="date" required>
+
+                <div class="time-row">
+                    <div>
+                        <label for="startTime">Starting Time</label>
+                        <input type="time" id="startTime" required>
+                    </div>
+
+                    <div>
+                        <label for="endTime">Ending Time</label>
+                        <input type="time" id="endTime" required>
+                    </div>
+                </div>
+
+                <label for="guests">Number of Guests</label>
+                <input type="number" id="guests"
+                    placeholder="Enter number of guests"
+                    min="1" required>
+
+                <label for="requirements">Additional Requirements</label>
+                <textarea id="requirements" rows="4"
+                    placeholder="Enter any additional requirements"></textarea>
+
+                <button type="button" id="checkAvailabilityBtn">
+                    Check Hall Availability
+                </button>
+
+                <p id="availabilityMessage" role="status"></p>
+
+                <button type="submit" class="submit-btn">
+                    Submit Booking Request
+                </button>
+
+                <p id="formMessage" role="status"></p>
+
+            </form>
+
+            <div class="status-checker">
+                <h2>Check Your Booking Status</h2>
+
+                <p>
+                    Enter the booking reference number you received
+                    after submitting your booking.
+                </p>
+
+                <label for="bookingReference">
+                    Booking Reference Number
+                </label>
+
+                <input type="text" id="bookingReference"
+                    placeholder="Example: CHB-123456789">
+
+                <button type="button" id="checkStatusBtn">
+                    Check Booking Status
+                </button>
+
+                <div id="statusMessage" role="status"></div>
+                <div id="receiptArea"></div>
+            </div>
+
+            <a href="index.html" class="back-link">
+                ← Back to Home
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Community Hall Booking Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Sample addresses for all 15 halls
+        const hallAddresses = {
+            "Sri Lakshmi Marriage Hall": "MG Road, Bengaluru, Karnataka",
+            "Royal Grand Convention Hall": "Whitefield, Bengaluru, Karnataka",
+            "Annapurna Community Hall": "Jayanagar, Bengaluru, Karnataka",
+            "Green Garden Function Hall": "Electronic City, Bengaluru, Karnataka",
+            "Sai Ram Celebration Hall": "Rajajinagar, Bengaluru, Karnataka",
+            "Mahalakshmi Convention Centre": "Malleshwaram, Bengaluru, Karnataka",
+            "Sunshine Banquet Hall": "Marathahalli, Bengaluru, Karnataka",
+            "Golden Palace Function Hall": "Indiranagar, Bengaluru, Karnataka",
+            "Sri Venkateshwara Hall": "Banashankari, Bengaluru, Karnataka",
+            "Royal Orchid Party Hall": "Hebbal, Bengaluru, Karnataka",
+            "Shubham Wedding Hall": "Vijayanagar, Bengaluru, Karnataka",
+            "Pearl Grand Community Hall": "BTM Layout, Bengaluru, Karnataka",
+            "Ashoka Conference Hall": "Koramangala, Bengaluru, Karnataka",
+            "Krishna Mini Function Hall": "Yelahanka, Bengaluru, Karnataka",
+            "Diamond Celebration Centre": "Sarjapur Road, Bengaluru, Karnataka"
+        };
+
+        const hallSelect = document.getElementById("hall");
+        const addressBox = document.getElementById("hallAddressBox");
+        const addressText = document.getElementById("hallAddress");
+
+        hallSelect.addEventListener("change", function () {
+            const params = new URLSearchParams(window.location.search);
+const requestedHall = params.get("hall");
+
+if (
+    requestedHall &&
+    Array.from(hallSelect.options).some(option => option.value === requestedHall)
+) {
+    hallSelect.value = requestedHall;
+    hallSelect.dispatchEvent(new Event("change"));
+}
+            const selectedHall = this.value;
+
+            if (hallAddresses[selectedHall]) {
+                addressText.textContent = hallAddresses[selectedHall];
+                addressBox.style.display = "block";
+            } else {
+                addressText.textContent = "";
+                addressBox.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>
